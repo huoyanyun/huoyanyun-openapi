@@ -1,0 +1,57 @@
+# 获取指定电销任务待呼叫的客户联系电话列表
+
+## 请求地址：
+http://api.huoyan.io/v1/open/task_user/page_list
+
+## 输入参数
+
+|     名称      |  类型   | 是否必需 |     示例       |    描述                  |
+|    -------    |  ----  |  ----   |  -----         |  ----------              |
+|     appkey    | string |  true   |  abcdefg123456 |  分配的AppKey             |
+|     task_id   |  int   |  true   |  1234          |  电销任务的ID             |
+|     read_notice   |  int   |  false   |  1          |  通知状态(1：未通知，2：已通知)，字段为空或不传返回全部             |
+|     page      |  int   |  false  |      1         |  返回结果的页数，默认为1   |
+|     page_size |  int   |  false  |     20         |  每页结果的数量，默认为20  |
+|     timestamp | string |  true   |  1528186061    |  请求发起的时间戳(单位:秒)           |
+|     sign      | string |  true   |  asdfasdffsd   |  签名串      |
+
+## 接口描述
+
+### 请求数据：
+
+签名方法 所有参数按照key名升序排列，然后按照key=value的形式和&拼接，结尾加上appSecret，参数值需要URLEncode。例： sign = md5(appkey=xxx&read_notice=xxx&task_id=xxx&timestamp=xxx&appSecret)
+
+### 返回数据：
+
+error: 结果代码，0表示成功，其他值均为失败，失败的时候会有msg字段表示错误信息
+
+msg: 错误信息，如果code为0，可能没有这个字段
+
+data: 具体的数据，返回搜索结果，数据格式如下：
+
+```json
+{
+    "task_user_list" : [
+        {"task_id": 1234, "task_user_id":1234, "customer_name":"张先生", "customer_jobtitle": "软件工程师", "company_name": "", "customer_phone": "13000000000"},
+        {"task_id": 1234, "task_user_id":1234, "customer_name":"张先生", "customer_jobtitle": "软件工程师", "company_name": "", "customer_phone": "13000000000"},
+        {"task_id": 1234, "task_user_id":1234, "customer_name":"张先生", "customer_jobtitle": "软件工程师", "company_name": "", "customer_phone": "13000000000"},
+        {"task_id": 1234, "task_user_id":1234, "customer_name":"张先生", "customer_jobtitle": "软件工程师", "company_name": "", "customer_phone": "13000000000"},
+        {"task_id": 1234, "task_user_id":1234, "customer_name":"张先生", "customer_jobtitle": "软件工程师", "company_name": "", "customer_phone": "13000000000"},
+        {"task_id": 1234, "task_user_id":1234, "customer_name":"张先生", "customer_jobtitle": "软件工程师", "company_name": "", "customer_phone": "13000000000"},
+    ],
+    "total": 66,
+    "page": 1,
+    "page_size": 20
+}
+```
+
+### data数据字段说明
+
+| 字段         | 类型   | 描述                |
+| ------------ | ------ | ------------------- |
+| task_id       | int | 任务ID        |
+| task_user_id       | int | 客户ID        |
+| company_name    | string   | 企业名称  |
+| customer_name | string    | 客户名称  |
+| customer_jobtitle | string    | 客户职位  |
+| customer_phone | string    | 客户电话  |
