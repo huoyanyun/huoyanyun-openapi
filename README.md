@@ -7,6 +7,6 @@
 * [获取客户信息](https://github.com/huoyanyun/huoyanyun-openapi/wiki/%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E4%BF%A1%E6%81%AF)
 * [按企业名称查询联系人](https://github.com/huoyanyun/huoyanyun-openapi/wiki/按企业名称查询联系人)
 
-* [入口跳转接口](https://github.com/huoyanyun/huoyanyun-openapi/wiki/入口跳转接口)
+* [入口跳转接口](https://github.com/huoyanyun/huoyanyun-openapi/wiki/%E9%9B%86%E6%88%90%E5%85%A5%E5%8F%A3%E8%B7%B3%E8%BD%AC%E6%8E%A5%E5%8F%A3)
 * [获取抓取手机号码接口](https://github.com/huoyanyun/huoyanyun-openapi/wiki/获取抓取手机号码接口)
 * [推送客户信息接口](https://github.com/huoyanyun/huoyanyun-openapi/wiki/推送客户信息接口)
